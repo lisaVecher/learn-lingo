@@ -1,0 +1,88 @@
+:root {
+    --theme-main: #9fb7ce;
+    --theme-light: #bfd6ea;
+    --theme-device-start: #314b6e;
+    --theme-device-end: #1f385a;
+    --theme-device-logo-start: #bfd6ea;
+    --theme-device-logo-end: #9fb6cd;
+
+
+    --color-primary: #f4c550;
+    --color-primary-hover: #ffdc86;
+    --color-primary-soft: #fbe9ba;
+
+
+    --color-home: var(--theme-light);
+    --color-home-soft: #cbded3;
+
+
+    --color-text: #121417;
+    --color-secondary-text: #8a8a89;
+    --color-background: #f8f8f8;
+    --color-white: #ffffff;
+    --color-success: #2faf36;
+    --color-error: #d73b2f;
+
+
+    --color-border: rgba(18, 20, 23, 0.1);
+    --color-border-strong: rgba(18, 20, 23, 0.2);
+    --color-backdrop: rgba(18, 20, 23, 0.55);
+
+
+    --container-width: 1312px;
+    --content-width: 1184px;
+
+
+    --transition: 250ms ease;
+    --modal-shadow: 0 24px 80px rgba(18, 20, 23, 0.2);
+}
+
+
+:root[data-theme="yellow"] {
+    --theme-main: #f4c550;
+    --theme-light: #fbe9ba;
+    --theme-device-start: #e8a43d;
+    --theme-device-end: #d68d25;
+    --theme-device-logo-start: #fbe9ba;
+    --theme-device-logo-end: #f4c550;
+}
+
+
+:root[data-theme="green"] {
+    --theme-main: #9fbaae;
+    --theme-light: #cbded3;
+    --theme-device-start: #2c5d63;
+    --theme-device-end: #214950;
+    --theme-device-logo-start: #cbded3;
+    --theme-device-logo-end: #9fbaae;
+}
+
+
+:root[data-theme="blue"] {
+    --theme-main: #9fb7ce;
+    --theme-light: #bfd6ea;
+    --theme-device-start: #314b6e;
+    --theme-device-end: #1f385a;
+    --theme-device-logo-start: #bfd6ea;
+    --theme-device-logo-end: #9fb6cd;
+}
+
+
+:root[data-theme="pink"] {
+    --theme-main: #e0a39a;
+    --theme-light: #f2c0bd;
+    --theme-device-start: #b23b38;
+    --theme-device-end: #8f2e2c;
+    --theme-device-logo-start: #f2c0bd;
+    --theme-device-logo-end: #e0a39a;
+}
+
+
+:root[data-theme="peach"] {
+    --theme-main: #f0aa8d;
+    --theme-light: #f4c8ba;
+    --theme-device-start: #d96a43;
+    --theme-device-end: #bc4d2d;
+    --theme-device-logo-start: #f4c8ba;
+    --theme-device-logo-end: #f0aa8d;
+}
