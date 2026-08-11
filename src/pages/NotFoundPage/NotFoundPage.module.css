@@ -1,0 +1,42 @@
+.page {
+    min-height: calc(100vh - 88px);
+    display: grid;
+    place-items: center;
+    padding: 40px 0;
+}
+
+
+.content {
+    text-align: center;
+}
+
+
+.code {
+    color: var(--color-primary);
+    font-size: 80px;
+    font-weight: 700;
+}
+
+
+.content h1 {
+    margin-bottom: 12px;
+    font-size: 40px;
+}
+
+
+.description {
+    margin-bottom: 32px;
+    color: var(--color-secondary-text);
+}
+
+
+.link {
+    display: inline-grid;
+    min-width: 180px;
+    min-height: 52px;
+    place-items: center;
+    padding: 14px 24px;
+    border-radius: 12px;
+    background-color: var(--color-primary);
+    font-weight: 700;
+}
