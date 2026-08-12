@@ -1,0 +1,63 @@
+.backdrop {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--color-backdrop);
+}
+
+
+.dialog {
+    position: relative;
+    width: min(100%, 566px);
+    max-height: calc(100vh - 40px);
+    padding: 64px;
+    overflow-y: auto;
+    border-radius: 30px;
+    background-color: var(--color-white);
+    box-shadow: var(--modal-shadow);
+}
+
+
+.bookingDialog {
+    width: min(100%, 600px);
+}
+
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1;
+    transition: color var(--transition);
+}
+
+
+.closeButton:hover {
+    color: var(--color-primary);
+}
+
+
+@media (max-width: 640px) {
+    .backdrop {
+        padding: 12px;
+    }
+
+
+    .dialog {
+        padding: 48px 24px 28px;
+        border-radius: 20px;
+    }
+}
