@@ -1,7 +1,10 @@
 import { NavLink } from "react-router";
+import toast from "react-hot-toast";
 
+import loginIcon from "../../assets/login.svg";
 import ukraineLogo from "../../assets/ukrainelogo.svg";
 import { themeOptions } from "../../data/themes";
+import { useAuth } from "../../hooks/useAuth";
 import Container from "../Container/Container";
 import css from "./Header.module.css";
 
@@ -9,7 +12,24 @@ function getLinkClass({ isActive }) {
   return `${css.link} ${isActive ? css.activeLink : ""}`;
 }
 
-function Header({ theme, isRandomTheme, onSelectTheme, onEnableRandomTheme }) {
+function Header({
+  onOpenAuth,
+  theme,
+  isRandomTheme,
+  onSelectTheme,
+  onEnableRandomTheme,
+}) {
+  const { user, logout } = useAuth();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      toast.success("You have logged out");
+    } catch {
+      toast.error("Could not log out");
+    }
+  };
+
   return (
     <header className={css.header}>
       <Container className={css.content}>
@@ -20,7 +40,6 @@ function Header({ theme, isRandomTheme, onSelectTheme, onEnableRandomTheme }) {
             alt=""
             aria-hidden="true"
           />
-
           <span>LearnLingo</span>
         </NavLink>
 
@@ -32,6 +51,12 @@ function Header({ theme, isRandomTheme, onSelectTheme, onEnableRandomTheme }) {
           <NavLink className={getLinkClass} to="/teachers">
             Teachers
           </NavLink>
+
+          {user && (
+            <NavLink className={getLinkClass} to="/">
+              Favorites
+            </NavLink>
+          )}
         </nav>
 
         <div className={css.themePicker} role="group" aria-label="Color theme">
@@ -65,6 +90,48 @@ function Header({ theme, isRandomTheme, onSelectTheme, onEnableRandomTheme }) {
               />
             );
           })}
+        </div>
+
+        <div className={css.actions}>
+          {user ? (
+            <>
+              <span className={css.userName} title={user.email}>
+                {user.displayName || user.email?.split("@")[0]}
+              </span>
+
+              <button
+                className={css.logoutButton}
+                type="button"
+                onClick={handleLogout}
+              >
+                Log out
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                className={css.loginButton}
+                type="button"
+                onClick={() => onOpenAuth("login")}
+              >
+                <img
+                  className={css.loginIcon}
+                  src={loginIcon}
+                  alt=""
+                  aria-hidden="true"
+                />
+                Log in
+              </button>
+
+              <button
+                className={css.registerButton}
+                type="button"
+                onClick={() => onOpenAuth("register")}
+              >
+                Registration
+              </button>
+            </>
+          )}
         </div>
       </Container>
     </header>
