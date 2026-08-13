@@ -1,0 +1,182 @@
+.filters {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+
+.field {
+    position: relative;
+    display: grid;
+    width: 233px;
+    gap: 8px;
+}
+
+
+.compactField {
+    width: 124px;
+}
+
+
+.label {
+    color: var(--color-secondary-text);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+}
+
+
+.trigger {
+    display: flex;
+    width: 100%;
+    min-height: 52px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 14px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+    text-align: left;
+    outline: none;
+    transition:
+        box-shadow var(--transition),
+        color var(--transition);
+}
+
+
+.trigger:hover,
+.trigger[aria-expanded="true"] {
+    box-shadow: 0 4px 16px rgba(18, 20, 23, 0.06);
+}
+
+
+.trigger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+
+.placeholder {
+    color: var(--color-secondary-text);
+}
+
+
+.triggerText {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.chevron {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform var(--transition);
+}
+
+
+.chevronOpen {
+    transform: translateY(3px) rotate(225deg);
+}
+
+
+.options {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 4px);
+    right: 0;
+    left: 0;
+    display: grid;
+    max-height: 264px;
+    gap: 8px;
+    padding: 14px 18px;
+    overflow-y: auto;
+    border-radius: 14px;
+    background-color: var(--color-white);
+    box-shadow: 0 8px 24px rgba(18, 20, 23, 0.06);
+    animation: openMenu 180ms ease;
+}
+
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    color: rgba(18, 20, 23, 0.2);
+    background: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.22;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color var(--transition);
+}
+
+
+.option:hover,
+.option:focus-visible {
+    color: #121417;
+}
+
+
+.selectedOption {
+    color: #121417;
+}
+
+
+@keyframes openMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.resetButton {
+    min-height: 48px;
+    padding: 12px 18px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 14px;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+
+.resetButton:hover {
+    background-color: var(--color-white);
+}
+
+
+@media (max-width: 800px) {
+    .filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .field,
+    .compactField {
+        width: 100%;
+    }
+}
