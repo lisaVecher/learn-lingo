@@ -4,16 +4,19 @@ import { Route, Routes } from "react-router";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import AppLayout from "../components/AppLayout/AppLayout";
 import { AuthProvider } from "../context/AuthContext";
+import { FavoritesProvider } from "../context/FavoritesContext";
 
 function App() {
   return (
     <AuthProvider>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <FavoritesProvider>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </FavoritesProvider>
     </AuthProvider>
   );
 }
