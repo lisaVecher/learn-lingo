@@ -1,0 +1,211 @@
+.title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+
+.description {
+    margin-bottom: 20px;
+    color: rgba(18, 20, 23, 0.8);
+    font-size: 16px;
+    line-height: 1.38;
+}
+
+
+.teacher {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 40px;
+}
+
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.teacherLabel {
+    margin-bottom: 4px;
+    color: var(--color-secondary-text);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.teacherName {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.form {
+    display: grid;
+    gap: 18px;
+}
+
+
+.fieldset {
+    min-width: 0;
+    margin: 0 0 22px;
+    padding: 0;
+    border: none;
+}
+
+
+.legend {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.33;
+}
+
+
+.radioGroup {
+    display: grid;
+    gap: 16px;
+}
+
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+
+.radio {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    place-content: center;
+    margin: 0;
+    appearance: none;
+    border: 2px solid rgba(18, 20, 23, 0.2);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    cursor: pointer;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.radio::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    content: "";
+    transform: scale(0);
+    transition: transform var(--transition);
+}
+
+
+.radio:hover,
+.radio:checked {
+    border-color: var(--color-primary);
+}
+
+
+.radio:checked::before {
+    transform: scale(1);
+}
+
+
+.radio:focus-visible {
+    outline: 2px solid var(--color-home);
+    outline-offset: 3px;
+}
+
+
+.field {
+    position: relative;
+    display: grid;
+    gap: 5px;
+}
+
+
+.input {
+    width: 100%;
+    min-height: 54px;
+    padding: 15px 18px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 12px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    outline: none;
+}
+
+
+.input:focus {
+    border-color: var(--color-primary);
+}
+
+
+.input::placeholder {
+    color: var(--color-text);
+}
+
+
+.inputError {
+    border-color: var(--color-error);
+}
+
+
+.error {
+    color: var(--color-error);
+    font-size: 12px;
+}
+
+
+.submitButton {
+    min-height: 60px;
+    margin-top: 22px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.submitButton:hover {
+    background-color: var(--color-primary-hover);
+}
+
+
+.submitButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+
+@media (max-width: 640px) {
+    .title {
+        font-size: 32px;
+    }
+
+
+    .legend {
+        font-size: 20px;
+    }
+}

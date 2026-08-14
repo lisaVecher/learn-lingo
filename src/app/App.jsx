@@ -5,6 +5,7 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import AppLayout from "../components/AppLayout/AppLayout";
 import { AuthProvider } from "../context/AuthContext";
 import { FavoritesProvider } from "../context/FavoritesContext";
+import TeachersPage from "../pages/TeachersPage/TeachersPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<HomePage />} />
+            <Route path="teachers" element={<TeachersPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
