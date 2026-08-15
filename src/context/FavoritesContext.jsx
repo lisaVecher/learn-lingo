@@ -1,14 +1,8 @@
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { useAuth } from "../hooks/useAuth";
 
-export const FavoritesContext = createContext(null);
+import { FavoritesContext } from "./favorites-context";
 
 function getStorageKey(uid) {
   return `learnlingo-favorites-${uid}`;

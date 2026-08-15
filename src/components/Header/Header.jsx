@@ -53,7 +53,7 @@ function Header({
           </NavLink>
 
           {user && (
-            <NavLink className={getLinkClass} to="/">
+            <NavLink className={getLinkClass} to="/favorites">
               Favorites
             </NavLink>
           )}

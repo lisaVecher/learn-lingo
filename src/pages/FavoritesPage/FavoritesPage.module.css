@@ -1,0 +1,38 @@
+.page {
+    min-height: calc(100vh - 88px);
+    padding: 64px 0 96px;
+    background-color: var(--color-background);
+}
+
+
+.content {
+    width: min(calc(100% - 32px),
+            var(--content-width));
+}
+
+
+.title {
+    margin-bottom: 32px;
+    font-size: 42px;
+    letter-spacing: -0.8px;
+}
+
+
+.empty {
+    padding: 80px 24px;
+    border-radius: 24px;
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+
+.empty h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+
+.empty p {
+    color: var(--color-secondary-text);
+    line-height: 1.5;
+}
