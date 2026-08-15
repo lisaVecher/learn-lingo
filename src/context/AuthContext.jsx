@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
   createUserWithEmailAndPassword,
@@ -14,9 +8,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-import { auth } from "../services/firebase";
+import { AuthContext } from "./auth-context";
 
-export const AuthContext = createContext(null);
+import { auth } from "../services/firebase";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
