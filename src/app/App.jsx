@@ -6,6 +6,8 @@ import AppLayout from "../components/AppLayout/AppLayout";
 import { AuthProvider } from "../context/AuthContext";
 import { FavoritesProvider } from "../context/FavoritesContext";
 import TeachersPage from "../pages/TeachersPage/TeachersPage";
+import FavoritesPage from "../pages/FavoritesPage/FavoritesPage";
+import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Route element={<AppLayout />}>
             <Route index element={<HomePage />} />
             <Route path="teachers" element={<TeachersPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="favorites" element={<FavoritesPage />} />
+            </Route>
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
