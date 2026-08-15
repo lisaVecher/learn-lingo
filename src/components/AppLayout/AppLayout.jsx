@@ -8,7 +8,8 @@ import css from "./AppLayout.module.css";
 
 function AppLayout() {
   const [authMode, setAuthMode] = useState(null);
-  const { theme, isRandom, selectTheme, enableRandomTheme } = useTheme();
+
+  useTheme();
 
   const closeAuthModal = useCallback(() => {
     setAuthMode(null);
@@ -16,13 +17,7 @@ function AppLayout() {
 
   return (
     <div className={css.layout}>
-      <Header
-        onOpenAuth={setAuthMode}
-        theme={theme}
-        isRandomTheme={isRandom}
-        onSelectTheme={selectTheme}
-        onEnableRandomTheme={enableRandomTheme}
-      />
+      <Header onOpenAuth={setAuthMode} />
 
       <main className={css.main}>
         <Outlet />

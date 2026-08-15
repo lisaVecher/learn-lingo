@@ -82,94 +82,30 @@
     font-weight: 700;
 }
 
-
-.themePicker {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.loginButton {
+    transition: color var(--transition);
 }
 
-
-.themeButton,
-.randomThemeButton {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    padding: 0;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    transition:
-        border-color var(--transition),
-        box-shadow var(--transition),
-        transform var(--transition);
+.loginButton:hover {
+    color: var(--theme-main);
 }
-
-
-.themeButton {
-    background-color: var(--swatch);
-}
-
-
-.randomThemeButton {
-    display: grid;
-    place-items: center;
-    color: var(--color-text);
-    background-color: var(--color-background);
-    font-size: 17px;
-    line-height: 1;
-}
-
-
-.themeButton:hover,
-.randomThemeButton:hover {
-    transform: scale(1.12);
-}
-
-
-.themeButton:focus-visible,
-.randomThemeButton:focus-visible {
-    outline: 2px solid var(--color-text);
-    outline-offset: 2px;
-}
-
-
-.selectedTheme {
-    border-color: var(--color-text);
-    box-shadow: 0 0 0 2px var(--color-white);
-}
-
-
-.yellow {
-    --swatch: #f4c550;
-}
-
-
-.green {
-    --swatch: #9fbaae;
-}
-
-
-.blue {
-    --swatch: #9fb7ce;
-}
-
-
-.pink {
-    --swatch: #e0a39a;
-}
-
-
-.peach {
-    --swatch: #f0aa8d;
-}
-
 
 .loginIcon {
+    display: inline-block;
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+    background-color: var(--theme-main);
+    mask-image: url("../../assets/login.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    transition: background-color var(--transition);
+    -webkit-mask-image: url("../../assets/login.svg");
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
 }
-
 
 .registerButton {
     min-width: 166px;
@@ -183,11 +119,9 @@
     transition: background-color var(--transition);
 }
 
-
 .registerButton:hover {
     background-color: #35383d;
 }
-
 
 .userName {
     max-width: 150px;
@@ -197,11 +131,9 @@
     white-space: nowrap;
 }
 
-
 .logoutButton {
     color: var(--color-error);
 }
-
 
 @media (max-width: 900px) {
     .content {
@@ -211,44 +143,26 @@
         padding-bottom: 18px;
     }
 
-
     .navigation {
         order: 3;
         width: 100%;
         justify-content: center;
     }
-
-
-    .themePicker {
-        margin-left: auto;
-    }
 }
-
 
 @media (max-width: 600px) {
     .content {
         gap: 16px;
     }
 
-
     .actions {
         gap: 8px;
     }
-
-
-    .themePicker {
-        order: 4;
-        width: 100%;
-        justify-content: center;
-        margin-left: 0;
-    }
-
 
     .registerButton {
         min-width: auto;
         padding: 12px;
     }
-
 
     .userName {
         display: none;
