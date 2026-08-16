@@ -8,7 +8,7 @@ The application was built with React, Vite, and Firebase. The interface is prima
 
 ## Live Demo
 
-[View the deployed application](https://learn-lingo-jek27n10x-lisavechers-projects.vercel.app/)
+[View the deployed application](https://learn-lingo-pi-sandy.vercel.app/)
 
 ## Repository
 
